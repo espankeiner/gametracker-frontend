@@ -11,24 +11,51 @@
     font-weight: 600;
 }
 
+.carousel-wrapper {
+    position: relative;
+}
+
 .categoria-scroller {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
+    overflow-x: hidden; /* ocultamos scroll horizontal */
     padding-bottom: 10px;
-    scrollbar-width: thin;
-}
-
-.categoria-scroller::-webkit-scrollbar {
-    height: 6px;
-}
-
-.categoria-scroller::-webkit-scrollbar-thumb {
-    background: #00ff80;
-    border-radius: 3px;
+    scroll-behavior: smooth;
 }
 
 .categoria-vacio {
     color: #ccc;
     font-size: 1rem;
+}
+
+/* Botones de flecha */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 128, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.carousel-btn:hover {
+    background: #00ff80;
+    box-shadow: 0 0 10px #00ff80;
+}
+
+.carousel-btn.left {
+    left: 5px;
+}
+
+.carousel-btn.right {
+    right: 5px;
 }
