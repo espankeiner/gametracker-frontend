@@ -21,7 +21,7 @@ const Header = () => {
         {/* LOGO */}
         <div className="header-logo">
           <div className="logo-icon">🎮</div>
-          <span className="logo-text">GameTracker</span>
+          <span className="logo-text">Xenon Games</span>
         </div>
 
         {/* NAV DESKTOP */}

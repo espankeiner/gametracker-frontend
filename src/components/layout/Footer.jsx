@@ -1,15 +1,30 @@
 import React from "react";
+import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import "./Footer.css";
 
 const Footer = () => (
-  <footer className="mt-12 py-6 bg-[var(--grisUI)]">
-    <div className="max-w-6xl mx-auto px-4 text-sm text-gray-300 flex justify-between">
-      <div>© 2025 GameTracker</div>
-      <div className="flex gap-4">
-        <a>Acerca de</a>
-        <a>Privacidad</a>
+  <footer className="footer-container">
+    <div className="footer-content">
+      <div className="footer-left">
+        <span>© 2025 GameTracker</span>
+        <span className="footer-tagline">Tu biblioteca de juegos, tu mundo</span>
+      </div>
+
+      <div className="footer-center">
+        <a href="#">Inicio</a>
+        <a href="#">Biblioteca</a>
+        <a href="#">Explorar</a>
+        <a href="#">Estadísticas</a>
+      </div>
+
+      <div className="footer-right">
+        <a href="#"><FaGithub /></a>
+        <a href="#"><FaInstagram /></a>
+        <a href="#"><FaTwitter /></a>
       </div>
     </div>
   </footer>
 );
 
 export default Footer;
+
