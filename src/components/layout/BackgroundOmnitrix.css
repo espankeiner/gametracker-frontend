@@ -1,0 +1,23 @@
+.omni-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.omni-x {
+    position: absolute;
+    width: 900px;
+    height: 120px;
+    background: linear-gradient(90deg, #00ff6a33, #00ff6a88, #00ff6a33);
+    border-radius: 20px;
+    transform: rotate(45deg);
+    transition: opacity 0.3s ease;
+}
+
+.omni-x.invert {
+    transform: rotate(-45deg);
+}

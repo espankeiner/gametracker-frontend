@@ -1,0 +1,32 @@
+.omnitrix-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(circle at center,
+    rgba(0,255,128,0.15) 0%,
+    rgba(0,255,128,0.05) 40%,
+    rgba(0,0,0,1) 75%
+  );
+
+  /* La X del Omnitrix */
+  mask-image:
+    linear-gradient(135deg, transparent 45%, black 50%, transparent 55%),
+    linear-gradient(225deg, transparent 45%, black 50%, transparent 55%);
+
+  mask-composite: intersect;
+
+  animation: brillo 6s infinite alternate ease-in-out;
+  z-index: -999;
+}
+
+@keyframes brillo {
+  from {
+    filter: blur(0px) brightness(0.9);
+  }
+  to {
+    filter: blur(4px) brightness(1.25);
+  }
+}

@@ -1,0 +1,44 @@
+.form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input, textarea {
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+input.input-error,
+textarea.input-error {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 8px rgba(255, 77, 77, 0.4);
+}
+
+.btn-save {
+  background: #00ff80;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-save:disabled {
+  background: #1d402c;
+  opacity: 0.5;
+  cursor: not-allowed;
+}

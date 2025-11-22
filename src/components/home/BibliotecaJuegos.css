@@ -1,0 +1,70 @@
+body {
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+.item-juego {
+    border-color: var(--grisUI);
+}
+
+.item-juego:hover {
+    background: var(--grisUI);
+}
+
+.titulo-biblio {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.lista-juegos {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.item-juego {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.item-juego:hover {
+    transform: scale(1.02);
+    background: #f2f2f2;
+}
+
+
+
+.library-container {
+  margin-top: 100px;
+  padding: 20px;
+  color: white;
+}
+
+.library-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #00ff80;
+}
+
+/* Grid de tarjetas */
+.library-grid {
+  margin-top: 10px;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* Texto cuando no hay juegos */
+.library-empty {
+  color: #999;
+  font-size: 1.2rem;
+}
+
