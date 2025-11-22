@@ -1,0 +1,169 @@
+/* ======= BANNER SUPERIOR ======= */
+.detalle-banner {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px) brightness(0.45);
+  position: relative;
+}
+
+/* ======= CONTENEDOR PRINCIPAL ======= */
+.detalle-container {
+  max-width: 1100px;
+  margin: -140px auto 0;
+  padding: 20px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+/* ======= FILA SUPERIOR: portada + info ======= */
+.detalle-top {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+/* Portada del juego */
+.detalle-portada {
+  width: 240px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7),
+              0 0 20px rgba(0, 255, 120, 0.20);
+}
+
+.detalle-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap; /* <-- evita estiramiento feo */
+}
+
+.rating-badge {
+  background: rgba(255,255,255,0.07);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap; /* <-- evita que se expanda */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-badge-fixed {
+  background: #111;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+/* Info a la derecha */
+.detalle-meta {
+  flex: 1;
+}
+
+.detalle-titulo {
+  font-size: 2.2rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+/* Tags */
+.detalle-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.detalle-tags span {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* ======= Botones y rating ======= */
+.btn-action {
+  background: var(--xbox, #00ff6a);
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-action:hover {
+  background: #00d45a;
+  box-shadow: 0 0 10px #00ff6a;
+}
+
+.rating-badge {
+  background: rgba(255,255,255,0.08);
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-left: 10px;
+  font-size: 0.95rem;
+}
+
+/* ======= Descripción ======= */
+.detalle-desc {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.detalle-desc h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+/* ======= Reseñas ======= */
+.detalle-reviews {
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.detalle-reviews h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px 0;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 780px) {
+  .detalle-container {
+    margin-top: -100px;
+  }
+
+  .detalle-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .detalle-portada {
+    width: 200px;
+  }
+
+  .btn-action {
+    margin-top: 10px;
+  }
+
+  .rating-badge {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

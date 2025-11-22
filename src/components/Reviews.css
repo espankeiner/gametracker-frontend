@@ -1,0 +1,47 @@
+/* src/components/DetalleJuego/Reviews.css */
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-card {
+  background: rgba(255,255,255,0.02);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.review-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #cfcfcf;
+}
+
+.review-text {
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* estrellas */
+.stars .star {
+  color: rgba(255,255,255,0.25);
+  margin-left: 4px;
+}
+
+.stars .star.on {
+  color: #ffd166;
+}
+
+/* no reviews */
+.no-reviews {
+  opacity: 0.8;
+}

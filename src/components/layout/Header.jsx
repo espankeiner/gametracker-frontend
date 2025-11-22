@@ -10,7 +10,6 @@ const Header = () => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -27,22 +26,22 @@ const Header = () => {
 
         {/* NAV DESKTOP */}
         <nav className="header-nav">
-          <a className="nav-link" href="#">Inicio</a>
-          <a className="nav-link" href="#">Biblioteca</a>
-          <a className="nav-link" href="#">Estadísitcas</a>
-          <a className="nav-link" href="#">Explorar</a>
+          <Link className="nav-link" to="/">Inicio</Link>
+          <Link className="nav-link" to="/biblioteca">Biblioteca</Link>
+          <Link className="nav-link" to="/estadisticas">Estadísticas</Link>
+          <Link className="nav-link" to="/explorar">Explorar</Link>
         </nav>
 
         {/* ACCIONES */}
         <div className="header-actions">
-          <input type="text" className="header-search" placeholder="Buscar juegos..."></input>
+          <input type="text" className="header-search" placeholder="Buscar juegos..." />
+
           <button className="add-btn">
             <Link to="/agregar" id="linkAgregar">+ Agregar juego</Link>
           </button>
 
-
           {/* HAMBURGER */}
-          <button 
+          <button
             className={`hamburger ${isOpen ? "open" : ""}`}
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -54,10 +53,10 @@ const Header = () => {
       {/* MENU MOVIL */}
       {isOpen && (
         <div className="mobile-menu">
-          <a href="#">Inicio</a>
-          <a href="#">Biblioteca</a>
-          <a href="#">Estadísticas</a>
-          <a href="#">Explorar</a>
+          <Link to="/" onClick={() => setIsOpen(false)}>Inicio</Link>
+          <Link to="/biblioteca" onClick={() => setIsOpen(false)}>Biblioteca</Link>
+          <Link to="/estadisticas" onClick={() => setIsOpen(false)}>Estadísticas</Link>
+          <Link to="/explorar" onClick={() => setIsOpen(false)}>Explorar</Link>
         </div>
       )}
     </header>
@@ -65,3 +64,4 @@ const Header = () => {
 };
 
 export default Header;
+

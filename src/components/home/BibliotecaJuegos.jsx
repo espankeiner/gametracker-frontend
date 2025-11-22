@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import "./BibliotecaJuegos.css"
 import GameCard from "../GameCard";
 import CategoriaCarrusel from "../CategoriaCarrusel";
-import GameRow from "./GameRow";
 
 const BibliotecaJuegos = () => {
     const [juegos, setJuegos] = useState([])
@@ -14,33 +13,40 @@ const BibliotecaJuegos = () => {
         .catch(err => console.log("Error:", err))
     }, [])
 
-    const grouped = juegos.reduce((acc, g) => {
-        const key = g.genero || "Otros";
-        acc[key] = acc[key] || [];
-        acc[key].push(g);
-        return acc;
-    }, {});
+    // Normalización para evitar problemas de tildes y mayúsculas
+    const normalizar = (str = "") =>
+        str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
     return (
-        <>
-            <div className="library-container">
+        <div className="library-container">
             <h2 className="library-title">📚 Mi Biblioteca de Juegos</h2>
 
-            <CategoriaCarrusel titulo="Acción" juegos={juegos.filter(g => g.genero === "Accion")} />
-            <CategoriaCarrusel titulo="Aventura" juegos={juegos.filter(g => g.genero === "Aventura")} />
-            <CategoriaCarrusel titulo="Más Jugados" juegos={juegos} />
+            {/* CATEGORÍAS */}
+            <CategoriaCarrusel 
+                titulo="Acción" 
+                games={juegos.filter(g => normalizar(g.genero) === "accion")}
+            />
 
+            <CategoriaCarrusel 
+                titulo="Aventura" 
+                games={juegos.filter(g => normalizar(g.genero) === "aventura")}
+            />
 
+            <CategoriaCarrusel 
+                titulo="Más Jugados" 
+                games={juegos}
+            />
+
+            {/* GRID GENERAL */}
             <div className="library-grid">
                 {juegos.length > 0 ? (
-                juegos.map((g) => <GameCard key={g._id} game={g} />)
+                    juegos.map((g) => <GameCard key={g._id} game={g} />)
                 ) : (
-                <p className="library-empty">No hay juegos aún.</p>
+                    <p className="library-empty">No hay juegos aún.</p>
                 )}
             </div>
-            </div>
-        </>
+        </div>
     )
 }
 
-export default BibliotecaJuegos
+export default BibliotecaJuegos;

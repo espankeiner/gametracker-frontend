@@ -6,8 +6,7 @@ import BibliotecaJuegos from "./components/home/BibliotecaJuegos";
 import HeroCarousel from "./components/home/HeroCarousel";
 import FondoOmnitrix from "./components/FondoOmnitrix";
 import FormAgregarJuego from "./components/FormAgregarJuego";
-import DetalleJuego from "./components/DetalleJuego";
-
+import DetalleJuegoPage from "./components/DetalleJuegoPage";
 
 const App = () => {
   return (
@@ -31,8 +30,16 @@ const App = () => {
             }
           />
 
+          {/* AGREGAR */}
           <Route path="/agregar" element={<FormAgregarJuego />} />
-          <Route path="/juego/:id" element={<DetalleJuego />} />
+
+          {/* DETALLE */}
+          <Route path="/juego/:id" element={<DetalleJuegoPage />} />
+
+          {/* NUEVAS RUTAS */}
+          <Route path="/biblioteca" element={<BibliotecaJuegos />} />
+          <Route path="/estadisticas" element={<div>Estadísticas pronto...</div>} />
+          <Route path="/explorar" element={<div>Explorar pronto...</div>} />
         </Routes>
       </main>
 
@@ -42,3 +49,4 @@ const App = () => {
 };
 
 export default App;
+
